@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class ResourceMakeCommand extends Command
 {
-    public $signature = 'api-toolkit:resource {name : The name of the Model you want to generate}';
+    public $signature = 'toolkit:resource {name : The name of the Model you want to generate}';
 
     public $description = 'Generate all the usual parts for an API Resource';
 
