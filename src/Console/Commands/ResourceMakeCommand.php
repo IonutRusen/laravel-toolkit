@@ -69,7 +69,7 @@ class ResourceMakeCommand extends Command
         foreach (config('api-toolkit.form_requests') as $request) {
             $this->comment("Creating {$request} for model {$name}");
             $this->call('make:request', [
-                'name' => "Api\\{$name}\\{$request}",
+                'name' => "{$name}\\{$request}",
             ]);
         }
     }
