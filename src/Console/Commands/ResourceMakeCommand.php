@@ -31,12 +31,20 @@ class ResourceMakeCommand extends Command
 
     protected function makeModel(string $name): void
     {
-        $this->comment("Creating Model and Migration for {$name}");
+        $this->comment("Creating Model  for {$name}");
         $this->call("make:model", [
             'name' => $name,
             '-m',
         ]);
+
+        $this->comment("Creating Migration for {$name}");
+        $this->call('make:migration', [
+           'name' => 'create_' . Str::snake($name) . '_table',
+       ]);
+
     }
+
+    
 
     protected function makeFactory(string $name): void
     {
