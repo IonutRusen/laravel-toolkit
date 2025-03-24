@@ -34,13 +34,10 @@ class ResourceMakeCommand extends Command
         $this->comment("Creating Model  for {$name}");
         $this->call("make:model", [
             'name' => $name,
-            '-m',
+            '-m' => true,
         ]);
 
-        $this->comment("Creating Migration for {$name}");
-        $this->call('make:migration', [
-           'name' => 'create_' . Str::snake($name) . '_table',
-       ]);
+       
 
     }
 
